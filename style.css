@@ -4,10 +4,22 @@
   box-sizing: border-box;
 }
 
-body {
-  /* background-color: #ff0000; */
-  margin: 0 auto;
+/* CSS 변수 (다크 모드 및 공통 스타일에 활용) */
+
+:root {
+  /* --bg-color: #ffffff; */
+  --text-color: #ffffff;
+  --card-bg: #ffffff;
 }
+
+body {
+  /* background-color: var(--bg-color); */
+  color: var(--text-color);
+  margin: 0;
+  font-family: sans-serif;
+}
+
+/* 그 외 적용 */
 
 .navbar {
   position: sticky;
@@ -28,9 +40,21 @@ body {
   align-items: center;
 }
 
+main {
+  background-color: #222222;
+}
+
 .card {
+  background-color: var(--card-bg);
   border: none;
   border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  transition: 0.3s;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-10px);
 }
 
 .card-img-top {
