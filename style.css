@@ -75,6 +75,11 @@ main {
   background-color: #222222;
 }
 
+.input-group {
+  justify-content: center;
+  align-items: center;
+}
+
 .card {
   background-color: var(--card-bg);
   border: none;
