@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>OFFSET STUDIO</title>
+    <title>studio Offset</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -30,10 +30,10 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
+              <a class="nav-link" href="#about-section">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Works</a>
+              <a class="nav-link" href="#works-section">Works</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Contact</a>
@@ -61,38 +61,74 @@
       </div>
     </nav>
 
-    <main class="bg-dark">
-      <div class="hero">
-        <h1 class="display-1">Beyond the obvious.</h1>
-        <p class="lead text-center">
-          정해진 답을 따라가기보다,<br />한 걸음 나아가 새로운 가능성을
-          발견합니다.
-        </p>
+    <main>
+      <div class="hero" id="hero">
+        <!-- background video -->
+        <video autoplay muted loop playsinline class="hero-video">
+          <source src="./vedio/hero-wave.webm" type="video/webm">
+        </video>
+
+        <!-- background overlay -->
+        <div class="hero-overlay"></div>
+
+        <!-- hero contents -->
+        <div class="hero-content">
+          <h1 class="display-1">Beyond the obvious.</h1>
+          <p class="lead text-center">
+            정해진 답을 따라가기보다,<br />한 걸음 나아가 새로운 가능성을
+            발견합니다.
+          </p>
+
+          <div class="hero-btn-group">
+            <a href="#works-section" class="btn btn-secondary btn-lg">
+              WORKS 보기
+            </a>
+            <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">CONTACT</button>
+          </div>
+        </div>
 
         <div class="mt-3">
-          <button type="button" class="btn btn-secondary btn-lg">
-            WORKS 보기
-          </button>
-
-          <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">CONTACT</button>
-
           <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h1 class="modal-title fs-5" id="exampleModalLabel">CONTACK</h1>
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">CONTACT</h1>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                   <form>
                     <div class="mb-3">
+                      <label for="recipient-name" class="col-form-label">프로젝트명</label>
+                      <input type="text" class="form-control" id="recipient-name">
+
+                      <label for="recipient-name" class="col-form-label">프로젝트 설명</label>
+                      <input type="text" class="form-control" id="recipient-name">
+
                       <label for="recipient-name" class="col-form-label">회사명</label>
                       <input type="text" class="form-control" id="recipient-name">
+
+                      <label for="recipient-name" class="col-form-label">담당자명</label>
+                      <input type="text" class="form-control" id="recipient-name">
+
+                      <label for="recipient-name" class="col-form-label">담당자 전화번호</label>
+                      <input type="text" class="form-control" id="recipient-name">
+
+                      <label for="recipient-name" class="col-form-label">담당자 이메일</label>
+                      <input type="text" class="form-control" id="recipient-name">
                     </div>
+
                     <div class="mb-3">
-                      <label for="message-text" class="col-form-label">협업 요청사항</label>
+                      <label for="message-text" class="col-form-label">요청사항</label>
                       <textarea class="form-control" id="message-text"></textarea>
                     </div>
+
+                    <label for="inputGroupFile02" class="form-label">참고 자료</label>
+
+                    <div class="input-group mb-3">
+                      <input type="file" class="form-control" id="inputGroupFile02">
+                      <label class="input-group-text" for="inputGroupFile02">Upload</label>
+                    </div>
+
                   </form>
                 </div>
                 <div class="modal-footer">
@@ -106,8 +142,8 @@
         </div>
       </div>
 
-      <section>
-        <h2 class="h2 text-center text-white">
+      <section id="about-section">
+        <h2 class="h2 text-center">
           We create from a different point of view.
         </h2>
         <p class="fs-6 lh-base text-center text-white-50">
@@ -126,8 +162,7 @@
                 <h5 class="card-title">아이디어를 현실로</h5>
                 <p class="card-text text-body-secondary">
                   아이디어를 떠올리는 것에서 그치지 않고, 직접 서비스를 만들고
-                  결과물로 구현하는 것을 좋아합니다. 새로운 가능성을 발견하고
-                  실제 가치로 구체화하는 것을 즐깁니다.
+                  결과물로 구현합니다.
                 </p>
               </div>
             </div>
@@ -144,8 +179,7 @@
                 <h5 class="card-title">배우고 적용하는 힘</h5>
                 <p class="card-text text-body-secondary">
                   모르는 것을 두려워하기보다 직접 찾아보고 배우면서 빠르게
-                  적용합니다. 디자인부터 HTML/CSS까지 하나씩 익히며, 배운 것을
-                  실제 결과물에 연결하려고 합니다.
+                  적용합니다.
                 </p>
               </div>
             </div>
@@ -162,8 +196,7 @@
                 <h5 class="card-title">사용자 관점의 사고</h5>
                 <p class="card-text text-body-secondary">
                   단순히 보기 좋은 결과물보다 사용하는 사람이 편하고 이해하기
-                  쉬운 경험을 중요하게 생각합니다. 작은 디테일까지 고민하며 더
-                  나은 서비스를 만들기 위해 끊임없이 개선합니다.
+                  쉬운 경험을 중요하게 생각합니다.
                 </p>
               </div>
             </div>
@@ -235,8 +268,8 @@
         </div>
       </section>
 
-      <section>
-        <h2 class="h2 text-center text-white">Selected Works</h2>
+      <section id="works-section">
+        <h2 class="h2 text-center text-white">Works</h2>
         <p class="fs-6 lh-base text-center text-white-50">
           우리가 만든 것은 단순한 이미지가 아니라<br />
           브랜드가 사람에게 닿는 방식입니다.
@@ -268,9 +301,9 @@
           <div class="carousel-inner">
             <div class="carousel-item active">
               <img
-                src="./images/works-1.png"
+                src="./images/works-4.png"
                 class="d-block w-100"
-                alt="ai 생성 패키지박스"
+                alt="피넛버터 패키지박스"
               />
             </div>
             <div class="carousel-item">
@@ -400,7 +433,7 @@
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h1 class="modal-title fs-5" id="exampleModalLabel">CONTACK</h1>
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">CONTACT</h1>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -425,16 +458,22 @@
 
       </section>
     </div>
+
+
+    <!-- floating btn -->
+    <a href="#hero" class="floating-btn btn btn-primary rounded-circle position-fixed bottom-0 end-0 m-4 shadow" style="width: 60px; height: 60px; z-index: 1030;">
+      <img src="./icon/ic-arrow.svg" alt="화살표 아이콘">
+    </a>
     
 
     <footer class="bg-black text-white text-center">
       <div class="container py-5">
-        <h4 class="fs-5">OFFSET STUDIO</h4>
+        <h4 class="fs-5">studio Offset</h4>
         <p class="text-white-50">
           Branding · Digital · Visual</br>
           Seoul, Korea
         </p>
-        <p class="small text-white-50">© 2026 OFFSET STUDIO. All rights reserved.</p>
+        <p class="small text-white-50">© 2026 studio Offset. All rights reserved.</p>
       </div>
     </footer>
 

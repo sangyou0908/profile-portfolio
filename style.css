@@ -4,10 +4,22 @@
   box-sizing: border-box;
 }
 
-body {
-  /* background-color: #ff0000; */
-  margin: 0 auto;
+/* CSS 변수 (다크 모드 및 공통 스타일에 활용) */
+
+:root {
+  /* --bg-color: #ffffff; */
+  --text-color: #ffffff;
+  --card-bg: #ffffff;
 }
+
+body {
+  /* background-color: var(--bg-color); */
+  color: var(--text-color);
+  margin: 0;
+  font-family: sans-serif;
+}
+
+/* 그 외 적용 */
 
 .navbar {
   position: sticky;
@@ -16,21 +28,69 @@ body {
 }
 
 .hero {
+  position: relative;
   width: 100%;
   height: 100vh;
-  background-image: url(https://images.unsplash.com/photo-1542401886-65d6c61db217?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  overflow: hidden;
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
 }
 
+.hero-video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+}
+
+.hero-content {
+  z-index: 3;
+  text-align: center;
+}
+
+.hero-btn-group {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+
+/* .btn-primary {
+  background-color: aqua;
+} */
+
+main {
+  background-color: #222222;
+}
+
+.input-group {
+  justify-content: center;
+  align-items: center;
+}
+
 .card {
+  background-color: var(--card-bg);
   border: none;
   border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  transition: 0.3s;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-10px);
 }
 
 .card-img-top {
@@ -75,7 +135,7 @@ section {
 }
 
 .contact-section {
-  background-color: #9a662b;
+  background-color: #222222;
 }
 
 .contact-section section {
@@ -84,6 +144,17 @@ section {
   align-items: center;
   margin: 0 auto;
   gap: 24px;
+}
+
+.floating-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.floating-btn img {
+  width: 32px;
+  height: 32px;
 }
 
 footer .container {
